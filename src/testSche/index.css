@@ -1,0 +1,25 @@
+#animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: red;
+  animation: myfirst 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myfirst {
+  from {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    background: red;
+  }
+  to {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: yellow;
+  }
+}
