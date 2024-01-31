@@ -206,7 +206,10 @@ function workLoop(hasTimeRemaining, initialTime) {
   currentTask = peek(taskQueue)
   while (currentTask !== null) {
     // 如果任务还没有到过期时间 并且 shouldYieldToHost返回true
-    if (currentTask.expirationTime > currentTime && shouldYieldToHost()) {
+    if (
+      currentTask.expirationTime > currentTime &&
+      (!hasTimeRemaining || shouldYieldToHost())
+    ) {
       break
     }
     // 获取任务执行函数
